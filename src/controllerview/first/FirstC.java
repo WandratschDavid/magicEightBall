@@ -66,7 +66,8 @@ public class FirstC implements Initializable
         }
         else
             {
-                System.out.println("Wrong User Data!!!");
+                System.out.println("Wrong userdata input!!!");
+                System.out.println("Please enter the correct credentials!");
         }
     }
 }

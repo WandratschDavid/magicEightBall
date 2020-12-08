@@ -10,7 +10,7 @@
         <Label layoutX="86.0" layoutY="77.0" minHeight="20.0" minWidth="100.0" text="Magic 8 Ball says ..." />
       <TextField fx:id="answerField" editable="false" layoutX="86.0" layoutY="104.0" minHeight="20.0" minWidth="100.0" />
       <Label layoutX="86.0" layoutY="166.0" minHeight="20.0" minWidth="80.0" text="Your question:" />
-      <TextField layoutX="86.0" layoutY="200.0" />
+      <TextField fx:id="question" layoutX="86.0" layoutY="200.0" />
       <Button layoutX="86.0" layoutY="244.0" mnemonicParsing="false" onAction="#askQuestion" text="Ask" />
     </children>
 </AnchorPane>

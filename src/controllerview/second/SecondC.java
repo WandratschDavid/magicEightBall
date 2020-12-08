@@ -19,6 +19,11 @@ public class SecondC implements Initializable
     QuestionController qC = new QuestionController();
 
     @FXML
+    private TextField question;
+
+    String[] words = {"Softwareentwicklung", "SEW"};
+
+    @FXML
     private TextField answerField;
 
     public static void show(Stage stage, String greeting)
@@ -55,6 +60,15 @@ public class SecondC implements Initializable
     @FXML
     private void askQuestion()
     {
-        answerField.setText(qC.getAnswer());
+        boolean outcome = QuestionController.containsWords(question.getText(), words);
+
+        if (outcome)
+        {
+            answerField.setText(qC.getPositiveAnswer());
+        }
+        else
+            {
+                answerField.setText(qC.getNegativeAnswer());
+            }
     }
 }
