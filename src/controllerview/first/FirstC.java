@@ -26,8 +26,6 @@ public class FirstC implements Initializable
 
     LoginController loginController = new LoginController();
 
-    public FirstC() {}
-
     public static void show(Stage stage)
     {
         try

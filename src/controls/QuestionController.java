@@ -1,8 +1,5 @@
 package controls;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-
 import java.util.Random;
 
 public class QuestionController
@@ -16,6 +13,9 @@ public class QuestionController
             "Better not tell you now", "Cannot predict now", "Concentrate and ask again",
             "Don't count on it", "My reply is no", "My sources say no",
             "Outlook not so good", "Very doubtful"};
+
+    String answer;
+    Random rd = new Random();
 
     public static boolean containsWords(String inputString, String[] items)
     {
@@ -33,21 +33,11 @@ public class QuestionController
 
     public String getPositiveAnswer()
     {
-        String answer;
-
-        Random rd = new Random();
-        int randomNumber = rd.nextInt(positiveAnswers.length);
-
-        return answer = positiveAnswers[randomNumber];
+        return answer = positiveAnswers[rd.nextInt(positiveAnswers.length)];
     }
 
     public String getNegativeAnswer()
     {
-        String answer;
-
-        Random rd = new Random();
-        int randomNumber = rd.nextInt(negativeAnswers.length);
-
-        return answer = negativeAnswers[randomNumber];
+        return answer = negativeAnswers[rd.nextInt(negativeAnswers.length)];
     }
 }
