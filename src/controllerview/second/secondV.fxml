@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controllerview.second.SecondC">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerview.second.SecondC">
     <children>
-        <Label layoutX="86.0" layoutY="77.0" text="Main Stage" />
+        <Label layoutX="86.0" layoutY="77.0" minHeight="20.0" minWidth="100.0" text="Magic 8 Ball says ..." />
+      <TextField fx:id="answerField" editable="false" layoutX="86.0" layoutY="104.0" minHeight="20.0" minWidth="100.0" />
+      <Label layoutX="86.0" layoutY="166.0" minHeight="20.0" minWidth="80.0" text="Your question:" />
+      <TextField layoutX="86.0" layoutY="200.0" />
+      <Button layoutX="86.0" layoutY="244.0" mnemonicParsing="false" onAction="#askQuestion" text="Ask" />
     </children>
 </AnchorPane>

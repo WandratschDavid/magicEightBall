@@ -1,11 +1,13 @@
 package controllerview.first;
 
 import controllerview.second.SecondC;
+import controls.LoginController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +17,16 @@ import java.util.ResourceBundle;
 public class FirstC implements Initializable
 {
     private Stage stage;
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private TextField password;
+
+    LoginController loginController = new LoginController();
+
+    public FirstC() {}
 
     public static void show(Stage stage)
     {
@@ -27,13 +39,13 @@ public class FirstC implements Initializable
             FirstC ctrl = fxmlLoader.getController();
             ctrl.stage = stage;
 
-            stage.setTitle("Welcome");
+            stage.setTitle("Magic 8 Ball - Login");
             stage.setScene(new Scene(root, 400, 400));
             stage.show();
         }
         catch (IOException e)
         {
-            System.err.println("Something wrong with firstV.fxml: " + e.getMessage());
+            System.err.println("Something went wrong with firstV.fxml: " + e.getMessage());
             e.printStackTrace(System.err);
         }
     }
@@ -42,12 +54,19 @@ public class FirstC implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @FXML
-    private void next()
+    private void doLogin()
     {
-        //navigate from welcome screen to main screen
-        System.out.println("Navigation started ...");
+        if (loginController.isCorrectLogin(name.getText(), password.getText()))
+        {
+            //navigate from login screen to question screen
+            System.out.println("User logged in ...");
 
-        SecondC.show(new Stage(),"Hello from Welcome Controller!");
-        stage.close();
+            SecondC.show(new Stage(),"Switched to question window!");
+            stage.close();
+        }
+        else
+            {
+                System.out.println("Wrong User Data!!!");
+        }
     }
 }

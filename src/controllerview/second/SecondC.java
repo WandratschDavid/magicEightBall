@@ -1,9 +1,12 @@
 package controllerview.second;
 
+import controls.QuestionController;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -12,6 +15,11 @@ import java.util.ResourceBundle;
 public class SecondC implements Initializable
 {
     private String myData = "";
+
+    QuestionController qC = new QuestionController();
+
+    @FXML
+    private TextField answerField;
 
     public static void show(Stage stage, String greeting)
     {
@@ -43,4 +51,10 @@ public class SecondC implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    @FXML
+    private void askQuestion()
+    {
+        answerField.setText(qC.getAnswer());
+    }
 }
